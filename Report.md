@@ -1,24 +1,31 @@
-### Report for Project 1 - Navigation
+### Report for Project 3 - Collaboration and Competition
 
 ## Learning Algorithm
 
-The learning algorithm used was a Deep Q Network with an underlying neural network using three 64-unit fully connected layers and relu activation functions.
+The learning algorithm used was a Multi-Agent Deep Deterministic Policy Gradient (MADDPG) using two Actor-Critic models with underlying neural networks, all four of which used two fully connected layers, with 256 and 128 units for the first and second layer, respectively, and relu activation functions.
 
 The hyperparameters used to train the agent were as follows:
-  - BATCH_SIZE = 64     (training batch size)
-  - GAMMA = 0.99        (discount factor)
-  - TAU = 0.001         (interpolation parameter for soft update of target parameters)
-  - LR = 0.0005         (learning rate)
-  - UPDATE_EVERY = 4    (how often to update the network)
+- BUFFER_SIZE = int(1e6)  (replay buffer size)
+- BATCH_SIZE = 128        (minibatch size)
+- GAMMA = 0.99            (discount factor)
+- TAU = 7e-2              (for soft update of target parameters)
+- LR_ACTOR = 1e-3         (learning rate of the actor)
+- LR_CRITIC = 1e-3        (learning rate of the critic)
+- WEIGHT_DECAY = 0        (L2 weight decay)
+- EPS_START = 5.5         (initial value for epsilon)
+- EPS_EP_END = 250        (episode to end the noise decay process)
+- EPS_FINAL = 0           (final value for epsilon after decay)
+- OU_SIGMA = 0.2          (Ornstein-Uhlenbeck noise parameter, volatility)
+- OU_THETA = 0.12         (Ornstein-Uhlenbeck noise parameter, speed of mean reversion)
 
 ## Plot of Rewards
 
-The following is a plot of the rewards for the trained agent showing the 414 episodes it took to solve the problem. Over the last 100 episodes, the average score was 13.01:
+The following is a plot of the rewards for the trained agent, which took 704 episodes to solve the problem, at which point the moving average score over the previous 100 episodes was 0.5:
 
 ![alt text](plot_of_rewards.png "Plot of Rewards")
 
 ## Ideas for Future Work
 
-The initial implementation was able to solve the task fairly quickly, but further optimization of hyperparameters could result in a quicker solution.
+The initial implementation was able to solve the task, but did not maintain a very consistent, high score and the moving average dropped below the threshold multiple times after the initial solution was reached. Further optimization of hyperparameters could result in more consistent success, or even higher scores.
 
 
