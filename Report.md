@@ -20,7 +20,7 @@ The hyperparameters used to train the agent were as follows:
 
 ## Plot of Rewards
 
-The following is a plot of the rewards for the trained agent showing the first 2000 episodes. It took 704 to solve the problem, at which point the moving average score over the previous 100 episodes was 0.5:
+The following is a plot of the rewards for the trained agent, which took 704 episodes to solve the problem, at which point the moving average score over the previous 100 episodes was 0.5:
 
 ![alt text](plot_of_rewards.png "Plot of Rewards")
 
