@@ -46,8 +46,6 @@ The solution is contained in Tennis.ipynb. Follow the steps in the Jupyter noteb
 ### Files included
 
 - Tennis.ipynb - Solution notebook
-- model.py - Actor, Critic models
-- maddpg_agent.py - MADDPG Agent definition
 - checkpoint_actor_0.pt - Trained Actor weights for Agent 0
 - checkpoint_critic_0.pt - Trained Critic weights for Agent 0
 - checkpoint_actor_1.pt - Trained Actor weights for Agent 1
